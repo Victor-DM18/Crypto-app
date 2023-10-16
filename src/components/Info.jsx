@@ -12,25 +12,25 @@ const Info = () => {
   }, []);
 
   return (
-    <div className="flex flex-row w-[40%]">
-      <div className="w-[45%] border-2 rounded-lg border-cyan-500">
+    <div className="flex flex-row gap-2 w-[45%] hidden lg:flex">
+      <div className="w-[45%] border-2 rounded-lg border-cyan-500 bg-gray-800">
         <ul className="flex flex-col">
           <li className="text-center bg-gray-900 rounded-lg p-5 text-2xl font-bold text-cyan-500 mb-5">
             Watch Tower
           </li>
-          <li className="m-2 text-xs lg:text-xl">
+          <li className="m-2 text-xs lg:text-lg">
             Crypto :{" "}
             <span className="text-green-400">
               {headerData.active_cryptocurrencies}
             </span>
           </li>
-          <li className="m-2 text-xs lg:text-xl">
+          <li className="m-2 text-xs lg:text-lg">
             Le marché :{" "}
             <span className="text-green-400">{headerData.markets}</span>
           </li>
         </ul>
       </div>
-      <div className="flex items-center w[45%] border-2 rounded-lg border-cyan-500">
+      <div className="flex items-center w[45%] border-2 rounded-lg border-cyan-500 bg-gray-800 p-5">
         <ul className="flex flex-col gap-5 ">
           <li>Global Market Cap :</li>
           <li>BTC dominance :</li>
