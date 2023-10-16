@@ -2,3 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body,
+#_react{
+  @apply bg-gray-800
+}
