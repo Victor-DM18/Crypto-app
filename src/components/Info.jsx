@@ -7,7 +7,7 @@ const Info = () => {
   useEffect(() => {
     (async () => {
       const res = await axios.get("https://api.coingecko.com/api/v3/global");
-      setHeaderData(res.data);
+      setHeaderData(res.data.data);
     })();
   }, []);
 
