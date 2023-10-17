@@ -18,13 +18,13 @@ const Info = () => {
           <li className="text-center bg-gray-900 rounded-lg p-5 text-2xl font-bold text-cyan-500 mb-5">
             Watch Tower
           </li>
-          <li className="m-2 text-xs lg:text-lg">
+          <li className="m-2 ">
             Crypto :{" "}
             <span className="text-green-400">
               {headerData.active_cryptocurrencies}
             </span>
           </li>
-          <li className="m-2 text-xs lg:text-lg">
+          <li className="m-2">
             Le marché :{" "}
             <span className="text-green-400">{headerData.markets}</span>
           </li>
