@@ -20,15 +20,9 @@ const Info = () => {
             Watch Tower
           </li>
           <li className="m-2 ">
-            Crypto :{" "}
-            <span className="text-green-400">
-              {headerData.active_cryptocurrencies}
-            </span>
+            Crypto : {headerData.active_cryptocurrencies}
           </li>
-          <li className="m-2">
-            Le marché :{" "}
-            <span className="text-green-400">{headerData.markets}</span>
-          </li>
+          <li className="m-2">Le marché : {headerData.markets}</li>
         </ul>
       </div>
       <div className="flex items-center w-[45%] border-2 rounded-lg border-cyan-500 bg-gray-800 p-5">
@@ -39,8 +33,12 @@ const Info = () => {
               number={headerData.market_cap_change_percentage_24h_usd}
             />
           </li>
-          <li>BTC dominance :</li>
-          <li>ETH dominance :</li>
+          <li>
+            BTC dominance : {headerData.market_cap_percentage.btc.toFixed(1)} %
+          </li>
+          <li>
+            ETH dominance : {headerData.market_cap_percentage.eth.toFixed(1)} %
+          </li>
         </ul>
       </div>
     </div>
