@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import HandlePercentChange from "./HandlePercentChange";
 
 const Info = () => {
   const [headerData, setHeaderData] = useState([]);
@@ -30,9 +31,14 @@ const Info = () => {
           </li>
         </ul>
       </div>
-      <div className="flex items-center w[45%] border-2 rounded-lg border-cyan-500 bg-gray-800 p-5">
-        <ul className="flex flex-col gap-5 ">
-          <li>Global Market Cap :</li>
+      <div className="flex items-center w-[45%] border-2 rounded-lg border-cyan-500 bg-gray-800 p-5">
+        <ul className="flex flex-col gap-5 w-full">
+          <li className="flex flex-row gap-2">
+            Global Market Cap :{" "}
+            <HandlePercentChange
+              number={headerData.market_cap_change_percentage_24h_usd}
+            />
+          </li>
           <li>BTC dominance :</li>
           <li>ETH dominance :</li>
         </ul>

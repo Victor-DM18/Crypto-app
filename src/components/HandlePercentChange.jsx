@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 
 const HandlePercentChange = ({ number }) => {
@@ -18,7 +17,7 @@ const HandlePercentChange = ({ number }) => {
 
   return (
     <div>
-      <span className={color}> {number ? number : "-"} </span>
+      <p className={color}> {number ? number.toFixed(1) + "%" : "-"} </p>
     </div>
   );
 };
