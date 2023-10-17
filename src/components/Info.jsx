@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import HandlePercentChange from "./HandlePercentChange";
-import InputFilter from "./InputFilter";
 
 const Info = () => {
   const [headerData, setHeaderData] = useState([]);
@@ -16,7 +15,7 @@ const Info = () => {
         setError(err);
       }
     })();
-  }, [headerData]);
+  }, []);
 
   return (
     <div className="flex flex-row gap-2 w-[45%] hidden lg:flex">

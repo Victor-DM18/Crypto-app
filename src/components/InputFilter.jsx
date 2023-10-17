@@ -27,6 +27,18 @@ const InputFilter = () => {
       >
         Aucune liste
       </label>
+      <input
+        type="checkbox"
+        id="favoris"
+        className="hidden"
+        defaultChecked={true}
+      />
+      <label
+        htmlFor="favoris"
+        className="bg-gray-800 border border-cyan-500 rounded-xl m-1 p-1"
+      >
+        Liste dess facoris
+      </label>
     </div>
   );
 };
