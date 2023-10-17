@@ -1,4 +1,5 @@
 import Info from "./components/Info";
+import InputFilter from "./components/InputFilter";
 import "./style/global.css";
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
       </h1>
       <header className="text-gray-100">
         <Info />
+        <InputFilter />
       </header>
     </div>
   );

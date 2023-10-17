@@ -1,16 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import HandlePercentChange from "./HandlePercentChange";
+import InputFilter from "./InputFilter";
 
 const Info = () => {
   const [headerData, setHeaderData] = useState([]);
+  const [error, setError] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get("https://api.coingecko.com/api/v3/global");
-      setHeaderData(res.data.data);
+      try {
+        const res = await axios.get("https://api.coingecko.com/api/v3/global");
+        setHeaderData(res.data.data);
+      } catch (err) {
+        setError(err);
+      }
     })();
-  }, []);
+  }, [headerData]);
 
   return (
     <div className="flex flex-row gap-2 w-[45%] hidden lg:flex">
@@ -34,10 +40,16 @@ const Info = () => {
             />
           </li>
           <li>
-            BTC dominance : {headerData.market_cap_percentage.btc.toFixed(1)} %
+            BTC dominance :{" "}
+            {headerData.market_cap_percentage &&
+              headerData.market_cap_percentage.btc.toFixed(1)}{" "}
+            %
           </li>
           <li>
-            ETH dominance : {headerData.market_cap_percentage.eth.toFixed(1)} %
+            ETH dominance :{" "}
+            {headerData.market_cap_percentage &&
+              headerData.market_cap_percentage.eth.toFixed(1)}{" "}
+            %
           </li>
         </ul>
       </div>
