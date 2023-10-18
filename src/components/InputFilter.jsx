@@ -2,40 +2,40 @@ import React from "react";
 
 const InputFilter = () => {
   return (
-    <div className="flex flex-row gap-5">
+    <div className="flex flex-row justify-around bg-gray-800 w-[40%] mt-2 rounded-lg shadow-lg border border-cyan-500">
       <input
-        type="checkbox"
+        type="radio"
+        name="checkbox"
         id="stableCoin"
-        className="hidden"
-        defaultChecked={true}
+        className="hidden peer/stableCoin"
       />
       <label
         htmlFor="stableCoin"
-        className="bg-gray-800 border border-cyan-500 rounded-xl m-1 p-1"
+        className="bg-gray-700 rounded-xl m-1 p-1 peer-checked/stableCoin:bg-gray-900"
       >
         Avec stable coin
       </label>
       <input
-        type="checkbox"
+        type="radio"
+        name="checkbox"
         id="noList"
-        className="hidden"
-        defaultChecked={true}
+        className="hidden peer/noList"
       />
       <label
-        htmlFor="nList"
-        className="bg-gray-800 border border-cyan-500 rounded-xl m-1 p-1"
+        htmlFor="noList"
+        className="bg-gray-700 rounded-xl m-1 p-1 peer-checked/noList:bg-gray-900"
       >
         Aucune liste
       </label>
       <input
-        type="checkbox"
+        type="radio"
+        name="checkbox"
         id="favoris"
-        className="hidden"
-        defaultChecked={true}
+        className="hidden peer/favoris"
       />
       <label
         htmlFor="favoris"
-        className="bg-gray-800 border border-cyan-500 rounded-xl m-1 p-1"
+        className="bg-gray-700 rounded-xl m-1 p-1 peer-checked/favoris:bg-gray-900"
       >
         Liste dess facoris
       </label>
