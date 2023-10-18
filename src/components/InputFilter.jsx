@@ -2,7 +2,7 @@ import React from "react";
 
 const InputFilter = () => {
   return (
-    <div className="flex flex-row justify-around bg-gray-800 w-[40%] mt-2 rounded-lg shadow-lg border border-cyan-500">
+    <div className="flex flex-row justify-around bg-gray-800 w-[40%] mt-2 rounded-lg shadow-md shadow-gray-900 border border-cyan-500">
       <input
         type="radio"
         name="checkbox"
