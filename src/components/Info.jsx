@@ -4,7 +4,7 @@ import HandlePercentChange from "./HandlePercentChange";
 
 const Info = () => {
   const [headerData, setHeaderData] = useState([]);
-  const [error, setError] = useState([]);
+  const [, setError] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -18,19 +18,21 @@ const Info = () => {
   }, []);
 
   return (
-    <div className="flex flex-row gap-2 w-[45%] hidden lg:flex">
-      <div className="w-[45%] border-2 rounded-lg border-cyan-500 bg-gray-800 shadow-md shadow-gray-900">
+    <div className="flex flex-row justify-center gap-2 w-[95%] lg:w-[45%]">
+      <div className="lg:w-[45%] border-2 rounded-lg border-cyan-500 bg-gray-800 shadow-md shadow-gray-900">
         <ul className="flex flex-col">
           <li className="text-center bg-gray-900 rounded-lg p-5 text-2xl font-bold text-cyan-500 mb-5 ">
             Watch Tower
           </li>
-          <li className="m-2 ">
+          <li className="m-2 text-xs lg:text-lg">
             Crypto : {headerData.active_cryptocurrencies}
           </li>
-          <li className="m-2">Le marché : {headerData.markets}</li>
+          <li className="m-2 text-xs lg:text-lg">
+            Le marché : {headerData.markets}
+          </li>
         </ul>
       </div>
-      <div className="flex items-center w-[45%] border-2 rounded-lg border-cyan-500 bg-gray-800 p-5 shadow-md shadow-gray-900">
+      <div className="flex items-center lg:w-[45%] text-xs lg:text-lg border-2 rounded-lg border-cyan-500 bg-gray-800 p-5 shadow-md shadow-gray-900">
         <ul className="flex flex-col gap-5 w-full">
           <li className="flex flex-row gap-2">
             Global Market Cap :{" "}

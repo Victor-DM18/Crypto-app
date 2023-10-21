@@ -23,8 +23,10 @@ const App = () => {
         Crypto App
       </h1>
       <header className="text-gray-100">
-        <Info />
-        <InputFilter />
+        <div className="flex flex-col items-center">
+          <Info />
+          <InputFilter />
+        </div>
         <TreeChart data={data} />
       </header>
     </div>

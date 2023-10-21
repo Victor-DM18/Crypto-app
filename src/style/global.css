@@ -5,5 +5,5 @@
 
 body,
 #_react{
-  @apply bg-gray-700
+  @apply bg-gray-700 m-0 p-0
 }
