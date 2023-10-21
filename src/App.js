@@ -5,6 +5,7 @@ import "./style/global.css";
 import axios from "axios";
 import TreeChart from "./components/TreeChart";
 import GlobalMarketChart from "./components/GlobalMarketChart";
+import React from "react";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -29,7 +30,7 @@ const App = () => {
           <InputFilter />
         </div>
         <TreeChart data={data} />
-        <GlobalMarketChart />
+        <GlobalMarketChart data={data} />
       </header>
     </div>
   );
