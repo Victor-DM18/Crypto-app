@@ -4,7 +4,6 @@ import InputFilter from "./components/InputFilter";
 import "./style/global.css";
 import axios from "axios";
 import TreeChart from "./components/TreeChart";
-import GlobalMarketChart from "./components/GlobalMarketChart";
 import React from "react";
 
 const App = () => {
@@ -30,7 +29,6 @@ const App = () => {
           <InputFilter />
         </div>
         <TreeChart data={data} />
-        <GlobalMarketChart data={data} />
       </header>
     </div>
   );
