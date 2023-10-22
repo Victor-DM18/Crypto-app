@@ -25,7 +25,7 @@ const App = () => {
       </h1>
       <header className="text-gray-100">
         <div className="flex flex-col w-full">
-          <div>
+          <div className="flex flex-row">
             <Info />
             <TreeChart data={data} />
           </div>
