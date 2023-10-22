@@ -21,19 +21,17 @@ const GlobalMarketChart = ({ data }) => {
     setDataArray(chartData);
   }, [data]);
 
-  console.log(dataArray);
-
   return (
-    <div>
+    <div className="hidden lg:flex lg:w-[45%]">
       <Treemap
-        width={700}
-        heigt={200}
+        width={730}
+        heigt={180}
         data={dataArray}
         dataKey="size"
         stroke="egb(50, 50, 50)"
         fill="black"
-        aspect="ratio"
-      />
+        aspectRatio="1"
+      ></Treemap>
     </div>
   );
 };
