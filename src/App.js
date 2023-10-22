@@ -28,7 +28,9 @@ const App = () => {
           <Info />
           <InputFilter />
         </div>
-        <TreeChart data={data} />
+        <div>
+          <TreeChart data={data} />
+        </div>
       </header>
     </div>
   );
