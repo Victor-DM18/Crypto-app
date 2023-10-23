@@ -22,16 +22,16 @@ const GlobalMarketChart = ({ data }) => {
   }, [data]);
 
   return (
-    <div className="hidden lg:flex ">
+    <div className="hidden lg:flex">
       <Treemap
         width={700}
-        heigt={170}
+        height={200}
         data={dataArray}
         dataKey="size"
-        stroke="rgb(50, 50, 50)"
+        stroke="rgb(51,51,51)"
         fill="black"
         aspectRatio="1"
-      ></Treemap>
+      />
     </div>
   );
 };
