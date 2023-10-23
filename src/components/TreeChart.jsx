@@ -13,7 +13,7 @@ const GlobalMarketChart = ({ data }) => {
           name: `${data[i].symbol.toUpperCase()} ${data[
             i
           ].market_cap_change_percentage_24h.toFixed(1)} %`,
-          size: `${data[i].market_cap}`,
+          size: data[i].market_cap,
           fill: null,
         });
       }
@@ -25,7 +25,7 @@ const GlobalMarketChart = ({ data }) => {
     <div className="hidden lg:flex">
       <Treemap
         width={700}
-        height={500}
+        height={200}
         data={dataArray}
         dataKey="size"
         stroke="rgb(51,51,51)"
