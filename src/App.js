@@ -25,11 +25,11 @@ const App = () => {
       </h1>
       <header className="text-gray-100">
         <div className="flex flex-col w-full">
-          <div className="flex flex-row">
+          <div className="flex flex-row justify-center">
             <Info />
             <TreeChart data={data} />
           </div>
-          <div className="flex lg:flex-row lg:justify-center">
+          <div className="flex lg:flex-row justify-center">
             <InputFilter />
           </div>
         </div>

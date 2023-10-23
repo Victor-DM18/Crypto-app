@@ -25,7 +25,7 @@ const GlobalMarketChart = ({ data }) => {
     <div className="hidden lg:flex">
       <Treemap
         width={700}
-        height={200}
+        height={500}
         data={dataArray}
         dataKey="size"
         stroke="rgb(51,51,51)"
