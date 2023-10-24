@@ -6,15 +6,15 @@ const GlobalMarketChart = ({ data }) => {
 
   const handleColor = (number) => {
     if (number >= 5) {
-      return "green-500";
+      return "rgb(19, 143, 28)";
     } else if (number >= 0) {
-      return "green-400";
+      return "rgb(90, 145, 94)";
     } else if (number >= -5) {
-      return "red-400";
+      return "rgb(191, 103, 111)";
     } else if (number >= -20) {
-      return "red-500";
+      return "rgb(150, 23, 34)";
     } else {
-      return "black";
+      return "rgb(0, 0, 0)";
     }
   };
 
