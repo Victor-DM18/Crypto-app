@@ -46,7 +46,7 @@ const GlobalMarketChart = ({ data }) => {
   };
 
   return (
-    <div className="hidden lg:flex">
+    <div className="hidden lg:flex shadow-md shadow-gray-800">
       <Treemap
         width={700}
         height={200}
