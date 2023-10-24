@@ -4,6 +4,20 @@ import { Tooltip, Treemap } from "recharts";
 const GlobalMarketChart = ({ data }) => {
   const [dataArray, setDataArray] = useState([]);
 
+  const handleColor = (number) => {
+    if (number >= 5) {
+      return "green-500";
+    } else if (number >= 0) {
+      return "green-400";
+    } else if (number >= -5) {
+      return "red-400";
+    } else if (number >= -20) {
+      return "red-500";
+    } else {
+      return "black";
+    }
+  };
+
   useEffect(() => {
     let chartData = [];
 
@@ -14,7 +28,7 @@ const GlobalMarketChart = ({ data }) => {
             i
           ].market_cap_change_percentage_24h.toFixed(1)} %`,
           size: data[i].market_cap,
-          fill: null,
+          fill: handleColor(data[i].price_change_percentage_24h),
         });
       }
     }
