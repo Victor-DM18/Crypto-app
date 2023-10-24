@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Treemap } from "recharts";
+import { Tooltip, Treemap } from "recharts";
 
 const GlobalMarketChart = ({ data }) => {
   const [dataArray, setDataArray] = useState([]);
@@ -21,6 +21,16 @@ const GlobalMarketChart = ({ data }) => {
     setDataArray(chartData);
   }, [data]);
 
+  const TreemapToolTip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div>
+          <p>{payload[0].payload.name}</p>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="hidden lg:flex">
       <Treemap
@@ -31,7 +41,9 @@ const GlobalMarketChart = ({ data }) => {
         stroke="rgb(51,51,51)"
         fill="black"
         aspectRatio="1"
-      />
+      >
+        <Tooltip content={<TreemapToolTip />} />
+      </Treemap>
     </div>
   );
 };
