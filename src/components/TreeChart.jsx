@@ -5,11 +5,11 @@ const GlobalMarketChart = ({ data }) => {
   const [dataArray, setDataArray] = useState([]);
 
   const handleColor = (number) => {
-    if (number >= 5) {
+    if (number >= 4) {
       return "rgb(19, 143, 28)";
     } else if (number >= 0) {
       return "rgb(90, 145, 94)";
-    } else if (number >= -5) {
+    } else if (number >= -4) {
       return "rgb(191, 103, 111)";
     } else if (number >= -20) {
       return "rgb(150, 23, 34)";
@@ -18,18 +18,34 @@ const GlobalMarketChart = ({ data }) => {
     }
   };
 
+  const handleExcludeCoins = (coin) => {
+    if (
+      coin === "usdt" ||
+      coin === "usdc" ||
+      coin === "busd" ||
+      coin === "dai" ||
+      coin === "ust" ||
+      coin === "mim"
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   useEffect(() => {
     let chartData = [];
 
     if (data.length > 0) {
       for (let i = 0; i < 45; i++) {
-        chartData.push({
-          name: `${data[i].symbol.toUpperCase()} ${data[
-            i
-          ].market_cap_change_percentage_24h.toFixed(1)} %`,
-          size: data[i].market_cap,
-          fill: handleColor(data[i].price_change_percentage_24h),
-        });
+        handleExcludeCoins(data[i].symbol) &&
+          chartData.push({
+            name: `${data[i].symbol.toUpperCase()} ${data[
+              i
+            ].market_cap_change_percentage_24h.toFixed(1)} %`,
+            size: data[i].market_cap,
+            fill: handleColor(data[i].price_change_percentage_24h),
+          });
       }
     }
     setDataArray(chartData);
