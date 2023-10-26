@@ -5,6 +5,7 @@ import "./style/global.css";
 import axios from "axios";
 import TreeChart from "./components/TreeChart";
 import React from "react";
+import TableCoins from "./components/TableCoins";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -34,6 +35,7 @@ const App = () => {
           </div>
         </div>
       </header>
+      <TableCoins data={data} />
     </div>
   );
 };
