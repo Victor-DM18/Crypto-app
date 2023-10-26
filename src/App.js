@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <div>
-      <h1 className="flex justify-center text-gray-100 font-extrabold text-3xl">
+      <h1 className="flex justify-center text-cyan-500 font-extrabold text-3xl mb-5">
         Crypto App
       </h1>
       <header className="text-gray-100">
