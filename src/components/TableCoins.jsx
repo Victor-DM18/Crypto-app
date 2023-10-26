@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-const tableCoins = ({ data }) => {
-  return <div></div>;
+const TableCoins = ({ data }) => {
+  const [range, setRange] = useState(100);
+  return (
+    <div>
+      <div>
+        <span>
+          top <input type="text" value={range}></input>
+        </span>
+      </div>
+    </div>
+  );
 };
 
-export default tableCoins;
+export default TableCoins;
