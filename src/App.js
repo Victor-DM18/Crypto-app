@@ -24,9 +24,9 @@ const App = () => {
       <h1 className="flex justify-center text-cyan-500 font-extrabold text-3xl mb-5">
         Crypto App
       </h1>
-      <header className="text-gray-100">
+      <header className="text-gray-100 flex justify-center">
         <div className="flex flex-col w-full">
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-row justify-center gap-2">
             <Info />
             <TreeChart data={data} />
           </div>
@@ -35,7 +35,7 @@ const App = () => {
           </div>
         </div>
       </header>
-      <div className="mt-10">
+      <div className="mt-10 text-center">
         <TableCoins data={data} />
       </div>
     </div>

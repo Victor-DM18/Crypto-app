@@ -17,7 +17,7 @@ const HandlePercentChange = ({ number }) => {
 
   return (
     <div>
-      <p className={color}> {number ? number.toFixed(1) + "%" : "-"} </p>
+      <p className={color}> {number ? ` ${number.toFixed(1)} % ` : "-"} </p>
     </div>
   );
 };

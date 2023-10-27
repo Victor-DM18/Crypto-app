@@ -1,9 +1,16 @@
-/* @config "../../tailwind.config.js"; */
+@config "../../tailwind.config.js";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 body,
 #_react{
-  @apply bg-gray-700 m-0 p-0
+  @apply bg-gray-700 mx-12 p-0
+}
+
+@layer utilities {
+  .rounded-map {
+     clip-path: inset(0% 0% 0% 0% round 10px);
+  }
 }

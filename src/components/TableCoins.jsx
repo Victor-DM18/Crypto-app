@@ -22,7 +22,7 @@ const TableCoins = ({ data }) => {
 
   return (
     <div>
-      <div className="flex flex-row gap-5 m-2">
+      <div className="flex flex-row gap-5 ">
         <span className="flex flex-row text-cyan-500 w-16 gap-2">
           top{" "}
           <input
