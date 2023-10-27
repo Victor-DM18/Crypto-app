@@ -50,7 +50,7 @@ const TableCoins = ({ data }) => {
               }
               className="hidden text-center"
             />
-            <label htmlFor={name} className="text-gray-100">
+            <label htmlFor={name} className="text-gray-100  cursor-pointer">
               {name}
             </label>
           </li>
