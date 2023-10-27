@@ -8,10 +8,23 @@ const TableCoins = ({ data }) => {
   };
   return (
     <div>
-      <div>
-        <span>
-          top <input type="text" value={range} onChange={handleChange}></input>
+      <div className="flex flex-row gap-5 m-2">
+        <span className="text-cyan-500">
+          top{" "}
+          <input
+            type="text"
+            value={range}
+            onChange={handleChange}
+            className="w-8 bg-gray-700"
+          ></input>
         </span>
+        <input
+          type="range"
+          min="1"
+          max="250"
+          value={range}
+          onChange={handleChange}
+        />
       </div>
     </div>
   );
