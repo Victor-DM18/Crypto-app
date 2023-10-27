@@ -20,6 +20,10 @@ const TableCoins = ({ data }) => {
     setRange(e.target.value);
   };
 
+  const handleTri = (e) => {
+    tri === e ? setTri(e + "reverse") : setRange(e);
+  };
+
   return (
     <div>
       <div className="flex flex-row gap-5 ">
@@ -49,6 +53,9 @@ const TableCoins = ({ data }) => {
                 name === tri || name === tri + "reverse" ? true : false
               }
               className="hidden text-center"
+              onClick={() =>
+                tri === name ? setTri(name + "reverse") : setRange(name)
+              }
             />
             <label htmlFor={name} className="text-gray-100  cursor-pointer">
               {name}
