@@ -35,7 +35,9 @@ const App = () => {
           </div>
         </div>
       </header>
-      <TableCoins data={data} />
+      <div className="mt-10">
+        <TableCoins data={data} />
+      </div>
     </div>
   );
 };
