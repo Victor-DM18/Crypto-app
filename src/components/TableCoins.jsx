@@ -68,6 +68,8 @@ const TableCoins = ({ data }) => {
           <ul className="flex flex-row gap-3">
             <li>{coin.name}</li>
             <li>{coin.current_price}</li>
+            <li>{coin.market_cap_rank}</li>
+            <li>{coin.total_volume}</li>
           </ul>
         ))}
       </div>
