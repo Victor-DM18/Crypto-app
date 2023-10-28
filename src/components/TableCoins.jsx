@@ -63,6 +63,14 @@ const TableCoins = ({ data }) => {
           </li>
         ))}
       </div>
+      <div className="text-xs lg:text-lg text-gray-100 flex flex-col mt-5 gap-2">
+        {data.map((coin) => (
+          <ul className="flex flex-row gap-3">
+            <li>{coin.name}</li>
+            <li>{coin.current_price}</li>
+          </ul>
+        ))}
+      </div>
     </div>
   );
 };
