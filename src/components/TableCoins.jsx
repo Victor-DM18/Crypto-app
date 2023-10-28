@@ -70,6 +70,7 @@ const TableCoins = ({ data }) => {
             <li>{coin.current_price}</li>
             <li>{coin.market_cap_rank}</li>
             <li>{coin.total_volume}</li>
+            <li>{coin.price_change_percentage_1h_in_currency}</li>
           </ul>
         ))}
       </div>
