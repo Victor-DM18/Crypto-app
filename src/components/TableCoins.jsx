@@ -53,9 +53,7 @@ const TableCoins = ({ data }) => {
                 name === tri || name === tri + "reverse" ? true : false
               }
               className="hidden text-center"
-              onClick={() =>
-                tri === name ? setTri(name + "reverse") : setRange(name)
-              }
+              onClick={handleTri}
             />
             <label htmlFor={name} className="text-gray-100  cursor-pointer">
               {name}
@@ -63,12 +61,13 @@ const TableCoins = ({ data }) => {
           </li>
         ))}
       </div>
-      <div className="text-xs lg:text-lg text-gray-100 flex flex-col mt-5 gap-2">
+      <div className="text-xs lg:text-lg text-gray-100 flex flex-col mt-5 gap-2 ">
         {data.map((coin) => (
-          <ul className="flex flex-row gap-3">
+          <ul className="flex flex-row  gap-24  ">
+            <li>{coin.market_cap_rank}</li>
             <li>{coin.name}</li>
             <li>{coin.current_price}</li>
-            <li>{coin.market_cap_rank}</li>
+            <li>{coin.market_cap}</li>
             <li>{coin.total_volume}</li>
             <li>{coin.price_change_percentage_1h_in_currency}</li>
           </ul>
