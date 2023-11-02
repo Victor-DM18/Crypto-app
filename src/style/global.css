@@ -6,7 +6,7 @@
 
 body,
 #_react{
-  @apply bg-gray-700 mx-12 p-0
+  @apply bg-gray-700 flex justify-center
 }
 
 @layer utilities {

@@ -20,13 +20,13 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <h1 className="flex justify-center text-cyan-500 font-extrabold text-3xl mb-5">
         Crypto App
       </h1>
-      <header className="text-gray-100 flex justify-center">
-        <div className="flex flex-col w-full">
-          <div className="flex flex-row justify-center gap-2">
+      <header className="text-gray-100 w-screen">
+        <div className="flex flex-col">
+          <div className="flex justify-center gap-2">
             <Info />
             <TreeChart data={data} />
           </div>
@@ -35,7 +35,7 @@ const App = () => {
           </div>
         </div>
       </header>
-      <div className="mt-10 text-center">
+      <div className="mt-10 text-center flex justify-center w-screen">
         <TableCoins data={data} />
       </div>
     </div>

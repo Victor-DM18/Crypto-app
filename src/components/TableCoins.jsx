@@ -21,7 +21,7 @@ const TableCoins = ({ data }) => {
   };
 
   const handleTri = (e) => {
-    tri === e ? setTri(e + "reverse") : setRange(e);
+    tri === e ? setTri(e + "reverse") : setTri(e);
   };
 
   return (
@@ -62,16 +62,17 @@ const TableCoins = ({ data }) => {
         ))}
       </div>
       <div className="text-xs lg:text-lg text-gray-100 flex flex-col mt-5 gap-2 ">
-        {data.map((coin) => (
-          <ul className="flex flex-row  gap-24  ">
-            <li>{coin.market_cap_rank}</li>
-            <li>{coin.name}</li>
-            <li>{coin.current_price}</li>
-            <li>{coin.market_cap}</li>
-            <li>{coin.total_volume}</li>
-            <li>{coin.price_change_percentage_1h_in_currency}</li>
-          </ul>
-        ))}
+        {data &&
+          data.map((coin) => (
+            <ul className="flex flex-row  gap-24  ">
+              <li>{coin.market_cap_rank}</li>
+              <li>{coin.name}</li>
+              <li>{coin.current_price}</li>
+              <li>{coin.market_cap}</li>
+              <li>{coin.total_volume}</li>
+              <li>{coin.price_change_percentage_1h_in_currency}</li>
+            </ul>
+          ))}
       </div>
     </div>
   );
