@@ -26,7 +26,7 @@ const TableCoins = ({ data }) => {
 
   return (
     <div>
-      <div className="flex flex-row gap-5 ">
+      <div className="flex flex-row w-screen ">
         <span className="flex flex-row text-cyan-500 w-16 gap-2">
           top{" "}
           <input
@@ -63,14 +63,20 @@ const TableCoins = ({ data }) => {
       </div>
       <div className="text-xs lg:text-lg text-gray-100 flex flex-col mt-5 gap-2 ">
         {data &&
-          data.map((coin) => (
-            <ul className="flex flex-row  gap-24  ">
-              <li>{coin.market_cap_rank}</li>
-              <li>{coin.name}</li>
-              <li>{coin.current_price}</li>
-              <li>{coin.market_cap}</li>
-              <li>{coin.total_volume}</li>
-              <li>{coin.price_change_percentage_1h_in_currency}</li>
+          data.slice(0, range).map((coin) => (
+            <ul className="flex flex-row gap-20    ">
+              <li className="flex justify-center w-8">
+                {coin.market_cap_rank}
+              </li>
+              <li className="flex justify-center w-8">{coin.name}</li>
+              <li className="flex justify-center w-20">{coin.current_price}</li>
+              <li className="flex justify-center w-12">{coin.market_cap}</li>
+              <li className="flex justify-center w-20">{coin.total_volume}</li>
+              <li className="flex justify-center w-4">
+                {parseFloat(
+                  coin.price_change_percentage_1h_in_currency.toFixed(2)
+                )}
+              </li>
             </ul>
           ))}
       </div>
