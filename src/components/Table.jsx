@@ -26,7 +26,7 @@ const Table = ({ data }) => {
   };
 
   return (
-    <div>
+    <div className="text-xs">
       <div className="flex flex-row w-screen ">
         <span className="flex flex-row text-cyan-500 w-16 gap-2">
           top{" "}
@@ -43,7 +43,6 @@ const Table = ({ data }) => {
           max="250"
           value={range}
           onChange={handleChange}
-          className=" w-32"
         />
         {tableName.map((name) => (
           <li className="w-full list-none text-center">
@@ -62,7 +61,7 @@ const Table = ({ data }) => {
           </li>
         ))}
       </div>
-      <div className="text-xs lg:text-lg text-gray-100 flex flex-col mt-5 gap-2 ">
+      <div className="text-xs text-gray-100 flex flex-col mt-5 gap-2 ">
         <TableLine data={data} range={range} />
       </div>
     </div>
