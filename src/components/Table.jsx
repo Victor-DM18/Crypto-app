@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TableCoins = ({ data }) => {
+const Table = ({ data }) => {
   const [range, setRange] = useState(100);
   const [tri, setTri] = useState("");
 
@@ -82,4 +82,4 @@ const TableCoins = ({ data }) => {
   );
 };
 
-export default TableCoins;
+export default Table;

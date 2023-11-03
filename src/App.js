@@ -5,7 +5,7 @@ import "./style/global.css";
 import axios from "axios";
 import TreeChart from "./components/TreeChart";
 import React from "react";
-import TableCoins from "./components/TableCoins";
+import Table from "./components/Table";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -35,8 +35,8 @@ const App = () => {
           </div>
         </div>
       </header>
-      <div className="mt-10 text-center flex justify-center w-screen">
-        <TableCoins data={data} />
+      <div className="mt-10  text-center flex justify-center w-full">
+        <Table data={data} />
       </div>
     </div>
   );
