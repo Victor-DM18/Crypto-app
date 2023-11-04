@@ -12,6 +12,12 @@ const TableLine = ({ data, range }) => {
     }
   };
 
+  const marketCapFormat = (num) => {
+    let newNum = String(num).split("").slice(0, -6);
+
+    return newNum;
+  };
+
   return (
     <div className="text-xs">
       {data &&
@@ -19,10 +25,10 @@ const TableLine = ({ data, range }) => {
           <div className="flex flex-row  py-3 w-fdivl border-t-2 border-gray-900 ">
             <p className="flex  justify-center w-12">{coin.market_cap_rank}</p>
             <p className="flex justify-start w-48">{coin.name}</p>
-            <p className="flex w-28">
-              {priceFormate(coin.current_price).toLocaleString() + " $"}
+            <p className="flex w-32">
+              {priceFormate(coin.current_price).toLocaleString()} $
             </p>
-            <p className="flex w-40 ">{coin.market_cap}</p>
+            <p className="flex w-36 ">{marketCapFormat(coin.market_cap)} M $</p>
             <p className="flex w-28">{coin.total_volume}</p>
             <p className="flex w-28">
               {parseFloat(coin.price_change_percentage_1h_in_currency)}
