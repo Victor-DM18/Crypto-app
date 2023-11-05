@@ -1,4 +1,5 @@
 import React from "react";
+import HandlePercentChange from "./HandlePercentChange";
 
 const TableLine = ({ data, range }) => {
   const priceFormate = (price) => {
@@ -24,16 +25,18 @@ const TableLine = ({ data, range }) => {
         data.slice(0, range).map((coin) => (
           <div className="flex flex-row  py-2 w-fdivl border-t-2 border-gray-900 ">
             <p className="flex  justify-center w-12">{coin.market_cap_rank}</p>
-            <p className="flex justify-start w-48">{coin.name}</p>
+            <p className="flex justify-start w-44">{coin.name}</p>
             <p className="flex w-32">
               {priceFormate(coin.current_price).toLocaleString()} $
             </p>
-            <p className="flex w-36 ">
+            <p className="flex w-32 ">
               {marketCapFormat(coin.market_cap).toLocaleString()} M $
             </p>
-            <p className="flex w-28">{coin.total_volume}</p>
+            <p className="flex w-32">{coin.total_volume.toLocaleString()}</p>
             <p className="flex w-28">
-              {coin.price_change_percentage_1h_in_currency}
+              <HandlePercentChange
+                number={coin.price_change_percentage_1h_in_currency}
+              />
             </p>
           </div>
         ))}
