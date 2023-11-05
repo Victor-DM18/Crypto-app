@@ -1,7 +1,7 @@
 import React from "react";
 import HandlePercentChange from "./HandlePercentChange";
 
-const TableLine = ({ data, range }) => {
+const TableLine = ({ data, range, ...otherProps }) => {
   const priceFormate = (price) => {
     if (Math.round(price).toString().length < 4) {
       return new Intl.NumberFormat("us-US", {
@@ -20,7 +20,7 @@ const TableLine = ({ data, range }) => {
   };
 
   return (
-    <div className="text-xs">
+    <div className="text-xs" {...otherProps}>
       {data &&
         data.slice(0, range).map((coin) => (
           <div className="flex flex-row  py-2 w-fdivl border-t-2 border-gray-900 ">
@@ -38,6 +38,27 @@ const TableLine = ({ data, range }) => {
                 number={coin.price_change_percentage_1h_in_currency}
               />
             </p>
+            <p className="flex w-28">
+              <HandlePercentChange
+                number={coin.price_change_percentage_7d_in_currency}
+              />
+            </p>
+            <p className="flex w-28">
+              <HandlePercentChange
+                number={coin.price_change_percentage_30Dd_in_currency}
+              />
+            </p>
+            <p className="flex w-28">
+              <HandlePercentChange
+                number={coin.price_change_percentage_200d_in_currency}
+              />
+            </p>
+            <p className="flex w-28">
+              <HandlePercentChange
+                number={coin.price_change_percentage_1y_in_currency}
+              />
+            </p>
+            <p>{coin.ath}</p>
           </div>
         ))}
     </div>
