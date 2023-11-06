@@ -32,33 +32,35 @@ const TableLine = ({ data, range, ...otherProps }) => {
             <p className="flex w-32 ">
               {marketCapFormat(coin.market_cap).toLocaleString()} M $
             </p>
-            <p className="flex w-32">{coin.total_volume.toLocaleString()}</p>
-            <p className="flex w-28">
+            <p className="flex w-36">{coin.total_volume.toLocaleString()}</p>
+            <p className="flex w-32">
               <HandlePercentChange
                 number={coin.price_change_percentage_1h_in_currency}
               />
             </p>
-            <p className="flex w-28">
+            <p className="flex w-32">
               <HandlePercentChange
                 number={coin.price_change_percentage_7d_in_currency}
               />
             </p>
-            <p className="flex w-28">
+            <p className="flex w-32">
               <HandlePercentChange
-                number={coin.price_change_percentage_30Dd_in_currency}
+                number={coin.price_change_percentage_30d_in_currency}
               />
             </p>
-            <p className="flex w-28">
+            <p className="flex w-32">
               <HandlePercentChange
                 number={coin.price_change_percentage_200d_in_currency}
               />
             </p>
-            <p className="flex w-28">
+            <p className="flex w-32">
               <HandlePercentChange
                 number={coin.price_change_percentage_1y_in_currency}
               />
             </p>
-            <p>{coin.ath}</p>
+            <p className="flex w-32">
+              <HandlePercentChange number={coin.ath_change_percentage} />
+            </p>
           </div>
         ))}
     </div>
