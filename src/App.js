@@ -6,6 +6,7 @@ import axios from "axios";
 import TreeChart from "./components/TreeChart";
 import React from "react";
 import Table from "./components/Table";
+import ArrowTop from "./components/ArrowTop";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -37,6 +38,9 @@ const App = () => {
       </header>
       <div className="mt-10  text-center flex justify-center w-full">
         <Table data={data} />
+      </div>
+      <div className="flex justify-center">
+        <ArrowTop />
       </div>
     </div>
   );
