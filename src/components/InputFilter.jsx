@@ -37,7 +37,7 @@ const InputFilter = () => {
         htmlFor="favoris"
         className="bg-gray-700 rounded-xl m-1 p-1 peer-checked/favoris:bg-gray-900"
       >
-        Liste dess facoris
+        Liste dess favoris
       </label>
     </div>
   );

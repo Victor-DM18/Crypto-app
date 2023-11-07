@@ -8,7 +8,10 @@ const ArrowTop = () => {
 
   return (
     <div>
-      <ArrowUpCircleIcon className="h-16" onClick={handleClick} />
+      <ArrowUpCircleIcon
+        className="h-16 hover:cursor-pointer text-cyan-500 mt-5"
+        onClick={handleClick}
+      />
     </div>
   );
 };
