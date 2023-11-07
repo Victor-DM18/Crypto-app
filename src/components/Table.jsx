@@ -62,7 +62,7 @@ const Table = ({ data }) => {
           </li>
         ))}
       </div>
-      <div className="text-xs text-gray-100 flex flex-col mt-5 gap-2 ">
+      <div className="text-xs text-gray-100 flex flex-col mt-5 gap-2">
         <TableLine key={data.id} data={data} range={range} />
       </div>
     </div>

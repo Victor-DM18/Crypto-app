@@ -20,10 +20,10 @@ const TableLine = ({ data, range, ...otherProps }) => {
   };
 
   return (
-    <div className="text-xs" {...otherProps}>
+    <div className="text-xs  " {...otherProps}>
       {data &&
         data.slice(0, range).map((coin) => (
-          <div className="flex flex-row  py-2  border-t-2 border-gray-900 ">
+          <div className="flex flex-row odd:bg-gray-800 py-2  border-t-2 border-gray-900 ">
             <p className="flex  justify-center w-12">{coin.market_cap_rank}</p>
             <p className="flex justify-start w-44">{coin.name}</p>
             <p className="flex w-32">
