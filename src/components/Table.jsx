@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import TableLine from "./TableLine";
+import { Form, Formik } from "formik";
+import FormRadio from "./FormRadio";
+import classNames from "classnames";
 
 const Table = ({ data }) => {
   const [range, setRange] = useState(100);
@@ -38,6 +41,7 @@ const Table = ({ data }) => {
             className=" bg-gray-700"
           ></input>
         </span>
+
         <input
           type="range"
           min="1"
@@ -45,22 +49,40 @@ const Table = ({ data }) => {
           value={range}
           onChange={handleChange}
         />
-        {tableName.map((name) => (
-          <li className="w-full list-none text-center">
-            <input
-              type="radio"
-              id={name}
-              defaultChecked={
-                name === tri || name === tri + "reverse" ? true : false
-              }
-              className="hidden text-center"
-              onClick={handleTri}
-            />
-            <label htmlFor={name} className="text-gray-100  cursor-pointer">
-              {name}
-            </label>
-          </li>
-        ))}
+
+        <Formik>
+          <Form>
+            {tableName.map((name) => (
+              <ul className="w-full flex flex-row justify-around text-center">
+                <FormRadio
+                  type="radio"
+                  name="tri"
+                  key={name}
+                  className={classNames(
+                    "flex flex-row "
+                    // activeButton === answer.id
+                    //   ? "bg-gray-200 dark:bg-gray-600"
+                    //   : "bg-gray-400 dark:bg-gray-800"
+                  )}
+                >
+                  {name}
+                </FormRadio>
+                {/* <input
+                  type="radio"
+                  id={name}
+                  defaultChecked={
+                    name === tri || name === tri + "reverse" ? true : false
+                  }
+                  className="hidden text-center"
+                  onClick={handleTri}
+                />
+                <label htmlFor={name} className="text-gray-100  cursor-pointer">
+                  {name}
+                </label> */}
+              </ul>
+            ))}
+          </Form>
+        </Formik>
       </div>
       <div className="text-xs text-gray-100 flex flex-col mt-5 gap-2">
         <TableLine key={data.id} data={data} range={range} />
