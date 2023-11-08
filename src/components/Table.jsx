@@ -31,7 +31,7 @@ const Table = ({ data }) => {
 
   return (
     <div className="text-xs">
-      <div className="flex flex-row w-screen ">
+      <div className="flex flex-row w-screen gap-6 justify-center ">
         <span className="flex flex-row text-cyan-500 w-16 gap-2">
           top{" "}
           <input
@@ -52,39 +52,24 @@ const Table = ({ data }) => {
 
         <Formik>
           <Form>
-            {tableName.map((name) => (
-              <ul className="w-full flex flex-row justify-around text-center">
+            <ul className="w-full flex flex-row gap-20 justify-around text-center">
+              {tableName.map((name) => (
                 <FormRadio
                   type="radio"
                   name="tri"
                   key={name}
                   className={classNames(
-                    "flex flex-row "
-                    // activeButton === answer.id
-                    //   ? "bg-gray-200 dark:bg-gray-600"
-                    //   : "bg-gray-400 dark:bg-gray-800"
+                    "flex flex-row justify-center text-center text-gray-100"
                   )}
                 >
                   {name}
                 </FormRadio>
-                {/* <input
-                  type="radio"
-                  id={name}
-                  defaultChecked={
-                    name === tri || name === tri + "reverse" ? true : false
-                  }
-                  className="hidden text-center"
-                  onClick={handleTri}
-                />
-                <label htmlFor={name} className="text-gray-100  cursor-pointer">
-                  {name}
-                </label> */}
-              </ul>
-            ))}
+              ))}
+            </ul>
           </Form>
         </Formik>
       </div>
-      <div className="text-xs text-gray-100 flex flex-col mt-5 gap-2">
+      <div className="text-xs text-gray-100 flex flex-col mt-5 gap-2 items-center">
         <TableLine key={data.id} data={data} range={range} />
       </div>
     </div>

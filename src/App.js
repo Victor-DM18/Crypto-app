@@ -21,7 +21,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="text-xs">
       <h1 className="flex justify-center text-cyan-500 font-extrabold text-3xl mb-5">
         Crypto App
       </h1>

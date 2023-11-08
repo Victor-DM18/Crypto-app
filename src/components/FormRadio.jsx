@@ -35,7 +35,7 @@ const FormRadio = forwardRef((props, ref) => {
               "relative w-64 appearance-none rounded-md border bg-gray-200 px-3 py-2 text-sky-950 placeholder-sky-950 focus:z-10 focus:border-sky-700 focus:outline-none focus:ring-sky-500 sm:text-sm":
                 type !== "radio",
 
-              "hidden flex flex-row text-cyan-500": type === "radio",
+              hidden: type === "radio",
             })}
             {...otherProps}
             ref={ref}
