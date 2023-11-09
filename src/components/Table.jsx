@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TableLine from "./TableLine";
 import { Form, Formik } from "formik";
-import FormRadio from "./FormRadio";
 
 const Table = ({ data }) => {
   const [range, setRange] = useState(100);
@@ -54,14 +53,14 @@ const Table = ({ data }) => {
                     type="radio"
                     id={name}
                     className="hidden"
-                    onClick={() =>
-                      tri === name ? setTri(name + "reverse") : setTri(name)
-                    }
+                    onClick={() => {
+                      tri === name ? setTri(name + "reverse") : setTri(name);
+                    }}
                     defaultChecked={
                       name === tri || name === tri + "reverse" ? true : false
                     }
                   />
-                  <label htmlFor="name">{name}</label>
+                  <label htmlFor={name}>{name}</label>
                 </li>
                 // <FormRadio
                 //   type="radio"
