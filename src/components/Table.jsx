@@ -24,10 +24,6 @@ const Table = ({ data }) => {
     setRange(e.target.value);
   };
 
-  const handleTri = (e) => {
-    tri === e ? setTri(e + "reverse") : setTri(e);
-  };
-
   return (
     <div className="text-xs">
       <div className="flex flex-row w-screen gap-6 justify-center ">
@@ -58,6 +54,9 @@ const Table = ({ data }) => {
                     type="radio"
                     id={name}
                     className="hidden"
+                    onClick={() =>
+                      tri === name ? setTri(name + "reverse") : setTri(name)
+                    }
                     defaultChecked={
                       name === tri || name === tri + "reverse" ? true : false
                     }
