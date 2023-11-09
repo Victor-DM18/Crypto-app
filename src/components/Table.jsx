@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import TableLine from "./TableLine";
 import { Form, Formik } from "formik";
 import FormRadio from "./FormRadio";
-import classNames from "classnames";
 
 const Table = ({ data }) => {
   const [range, setRange] = useState(100);
@@ -52,18 +51,31 @@ const Table = ({ data }) => {
 
         <Formik>
           <Form>
-            <ul className="w-full flex flex-row gap-20 justify-around text-center">
-              {tableName.map((name) => (
-                <FormRadio
-                  type="radio"
-                  name="tri"
-                  key={name}
-                  className={classNames(
-                    "flex flex-row justify-center text-center text-gray-100"
-                  )}
-                >
-                  {name}
-                </FormRadio>
+            <ul className="w-full flex flex-row gap-20 justify-around text-gray-100 text-center">
+              {tableName.map((name, i) => (
+                <li key={name}>
+                  <input
+                    type="radio"
+                    id={name}
+                    className="hidden"
+                    defaultChecked={
+                      name === tri || name === tri + "reverse" ? true : false
+                    }
+                  />
+                  <label htmlFor="name">{name}</label>
+                </li>
+                // <FormRadio
+                //   type="radio"
+                //   key={name[i]}
+                //   value={name[i]}
+                //   onClick={handleTri}
+                //   defaultChecked={
+                //     name === tri || name === tri + "reverse" ? true : false
+                //   }
+                //   className="flex flex-row justify-center text-center text-gray-100"
+                // >
+                //   {name}
+                // </FormRadio>
               ))}
             </ul>
           </Form>
