@@ -62,18 +62,6 @@ const Table = ({ data }) => {
                   />
                   <label htmlFor={name}>{name}</label>
                 </li>
-                // <FormRadio
-                //   type="radio"
-                //   key={name[i]}
-                //   value={name[i]}
-                //   onClick={handleTri}
-                //   defaultChecked={
-                //     name === tri || name === tri + "reverse" ? true : false
-                //   }
-                //   className="flex flex-row justify-center text-center text-gray-100"
-                // >
-                //   {name}
-                // </FormRadio>
               ))}
             </ul>
           </Form>
