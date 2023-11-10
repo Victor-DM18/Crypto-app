@@ -19,6 +19,10 @@ const Table = ({ data }) => {
     "ATH",
   ];
 
+  const handleTri = (e) => {
+    setTri(e.target.id);
+  };
+
   const handleChange = (e) => {
     setRange(e.target.value);
   };
@@ -49,17 +53,7 @@ const Table = ({ data }) => {
             <ul className="w-full flex flex-row gap-20 justify-around text-gray-100 text-center">
               {tableName.map((name, i) => (
                 <li key={name}>
-                  <input
-                    type="radio"
-                    id={name}
-                    className="hidden"
-                    onClick={() => {
-                      tri === name ? setTri(name + "reverse") : setTri(name);
-                    }}
-                    defaultChecked={
-                      name === tri || name === tri + "reverse" ? true : false
-                    }
-                  />
+                  <input type="radio" id={name} className="hidden" />
                   <label htmlFor={name}>{name}</label>
                 </li>
               ))}
@@ -70,7 +64,7 @@ const Table = ({ data }) => {
       <div className="text-xs text-gray-100 flex flex-col mt-5 items-center">
         {data &&
           data.slice(0, range).map((coin) => (
-            <div className="odd:bg-gray-800">
+            <div className="odd:bg-gray-800" key={coin} id={coin}>
               <TableLine key={data.id} tri={tri} coin={coin} />
             </div>
           ))}
