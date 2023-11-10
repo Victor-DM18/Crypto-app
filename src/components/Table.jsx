@@ -79,8 +79,13 @@ const Table = ({ data }) => {
           </Form>
         </Formik>
       </div>
-      <div className="text-xs text-gray-100 flex flex-col mt-5 gap-2 items-center">
-        <TableLine key={data.id} data={data} range={range} />
+      <div className="text-xs text-gray-100 flex flex-col mt-5 items-center">
+        {data &&
+          data.slice(0, range).map((coin) => (
+            <div className="odd:bg-gray-800">
+              <TableLine key={data.id} tri={tri} coin={coin} />
+            </div>
+          ))}
       </div>
     </div>
   );
