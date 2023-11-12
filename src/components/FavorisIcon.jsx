@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { StarIcon } from "@heroicons/react/24/solid";
 
-const handleClick = () => {};
+const FavorisIcon = ({ coinId }) => {
+  const [like, setLike] = useState(false);
 
-const FavorisIcon = () => {
+  useEffect(() => {
+    (async () => {
+      if (localStorage.getItem("favoris")) {
+        let favList = localStorage.getItem("favoris").split(",");
+        if (favList.includes(coinId)) {
+          setLike(true);
+        }
+      }
+    })();
+  }, [coinId]);
+
+  const handleClick = () => {};
   return (
     <div>
       <StarIcon className="h-4 hover:cursor-pointer" onClick={handleClick} />
