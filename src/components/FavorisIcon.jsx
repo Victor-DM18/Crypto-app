@@ -1,7 +1,6 @@
 import React from "react";
 
-import { StarIcon } from "@heroicons/react/24/outline";
-// import { StarIcon } from "@heroicons/react/24/outline";
+import { StarIcon } from "@heroicons/react/24/solid";
 
 const FavorisIcon = () => {
   return (
