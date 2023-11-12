@@ -23,7 +23,7 @@ const TableLine = ({ coin, ...otherProps }) => {
   return (
     <div className="text-xs  " {...otherProps}>
       <div className="flex flex-row  py-2  border-t-2 border-gray-900 ">
-        <FavorisIcon />
+        <FavorisIcon coinId={coin.id} />
         <p className="flex  justify-center w-12">{coin.market_cap_rank}</p>
         <p className="flex justify-start w-56">{coin.name}</p>
         <p className="flex w-28">
