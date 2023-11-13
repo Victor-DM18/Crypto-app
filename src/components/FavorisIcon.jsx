@@ -17,7 +17,23 @@ const FavorisIcon = ({ coinId }) => {
     })();
   }, [coinId]);
 
-  const handleClick = () => {};
+  const handleClick = (id) => {
+    let favList = null;
+    let list = localStorage.getItem("favoris");
+
+    if (list) {
+      favList = list.split(",");
+    }
+
+    if (favList?.includes(id)) {
+      window.localStorage.favoris = favList.filter((coin) => coin !== id);
+      setLike(false);
+    } else {
+      localStorage.setItem("favoris", coinId);
+      setLike(true);
+    }
+  };
+
   return (
     <div>
       <StarIcon
@@ -25,7 +41,7 @@ const FavorisIcon = ({ coinId }) => {
           "h-4 hover:cursor-pointer",
           like ? "text-cyan-500" : "text-gray-100"
         )}
-        onClick={handleClick}
+        onClick={() => handleClick(coinId)}
       />
     </div>
   );
