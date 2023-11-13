@@ -19,15 +19,19 @@ const FavorisIcon = ({ coinId }) => {
 
   const handleClick = (id) => {
     let favList = null;
-    let list = localStorage.getItem("favoris");
+    const list = localStorage.getItem("favoris");
 
     if (list) {
       favList = list.split(",");
     }
-
-    if (favList?.includes(id)) {
-      window.localStorage.favoris = favList.filter((coin) => coin !== id);
-      setLike(false);
+    if (favList) {
+      if (favList.includes(id)) {
+        window.localStorage.favoris = favList.filter((coin) => coin !== id);
+        setLike(false);
+      } else {
+        window.localStorage.favoris = [...favList, coinId];
+        setLike(true);
+      }
     } else {
       localStorage.setItem("favoris", coinId);
       setLike(true);
